@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './Board.css';
 
 function Card({ id, picture, title, price, duration }: any) {
   return (
@@ -24,9 +24,9 @@ function Card({ id, picture, title, price, duration }: any) {
   )
 }
 
-function App() {
+function Board() {
   return (
-    <div className="App">
+    <div className="Board">
       <header className="header">
         Evaneos
       </header>
@@ -50,4 +50,4 @@ function App() {
   );
 }
 
-export default App;
+export default Board;
