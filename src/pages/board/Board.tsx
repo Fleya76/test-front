@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import './Board.css';
+import { Header } from '../../components/header';
 
 const StyledDiv = styled.div`
   padding: 8px;
+  margin: ${(props) => props.theme.margin.main};
 `;
 
 function Card({ id, picture, title, price, duration }: any) {
@@ -34,7 +35,7 @@ function Card({ id, picture, title, price, duration }: any) {
 function Board() {
   return (
     <StyledDiv>
-      <header className="header">Evaneos</header>
+      <Header>Evanoes</Header>
       <div className="itinerary-container">
         <Card
           id={1479}

@@ -3,6 +3,23 @@ import 'styled-components';
 
 declare module 'styled-components' {
   export interface DefaultTheme {
+    device: {
+      mobile: {
+        min: string;
+        max: string;
+      };
+      tablet: {
+        min: string;
+        max: string;
+      };
+      desktop: {
+        min: string;
+        max: string;
+      };
+    };
+    margin: {
+      main: string;
+    };
     colors: {
       veraneos: string;
       superdarkaneos: string;

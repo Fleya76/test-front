@@ -20,16 +20,13 @@ code {
     monospace;
 }
 
-p {
-  margin: 0;
+/* Fix to have the DOM: https://stackoverflow.com/questions/70499543/create-react-app-creates-this-iframe-that-prevents-me-from-clicking-or-editing */
+iframe {
+  pointer-events: none;
 }
 
-header {
-  color: var(--color-veraneos);
-  font-size: 2.4rem;
-  font-weight: 700;
-  line-height: 2.4rem;
-  margin: 16px;
+p {
+  margin: 0;
 }
 
 .itinerary-container {

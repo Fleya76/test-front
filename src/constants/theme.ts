@@ -2,6 +2,20 @@ import { DefaultTheme } from 'styled-components';
 
 // Define what props.theme will look like
 const theme: DefaultTheme = {
+  device: {
+    mobile: {
+      min: '0px',
+      max: '799px',
+    },
+    tablet: {
+      min: '800px',
+      max: '1199px',
+    },
+    desktop: {
+      min: '1200px',
+      max: '2000px',
+    },
+  },
   colors: {
     veraneos: '#14716a',
     superdarkaneos: '#013839',
@@ -27,6 +41,9 @@ const theme: DefaultTheme = {
     'orange-light': '#f79a57',
     'orange-lighter': '#ffc194',
     pink: '#faab95',
+  },
+  margin: {
+    main: '1%',
   },
 };
 
