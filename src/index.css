@@ -6,33 +6,6 @@ html {
   box-sizing: border-box;
 }
 
-:root {
-  --color-veraneos: #14716a;
-  --color-superdarkaneos: #013839;
-  --color-darkaneos: #005c56;
-  --color-lime: #12b886;
-  --color-lime-dark: #038b62;
-  --color-lime-darker: #095d44;
-  --color-lime-lightest: #d6f8ee;
-  --color-blue: #129cab;
-  --color-ink: #343a40;
-  --color-ink-light: #868e96;
-  --color-ink-lighter: #adb5bd;
-  --color-paper-darker: #eee9e5;
-  --color-paper-dark: #f5f3f1;
-  --color-paper: #faf9f8;
-  --color-paper-light: #fdfcfb;
-  --color-white: #fff;
-  --color-red: #db2c24;
-  --color-red-light: #eb706a;
-  --color-gold: #ffb200;
-  --color-gold-lightest: #fff3d2;
-  --color-orange: #ee641c;
-  --color-orange-light: #f79a57;
-  --color-orange-lighter: #ffc194;
-  --color-pink: #faab95;
-}
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

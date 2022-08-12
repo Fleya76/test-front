@@ -1,5 +1,11 @@
-import React from 'react'
-import './Board.css'
+import React from 'react';
+import styled from 'styled-components';
+
+import './Board.css';
+
+const StyledDiv = styled.div`
+  padding: 8px;
+`;
 
 function Card({ id, picture, title, price, duration }: any) {
   return (
@@ -22,12 +28,12 @@ function Card({ id, picture, title, price, duration }: any) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 function Board() {
   return (
-    <div className="Board">
+    <StyledDiv>
       <header className="header">Evaneos</header>
       <div className="itinerary-container">
         <Card
@@ -45,8 +51,8 @@ function Board() {
           duration={12}
         />
       </div>
-    </div>
-  )
+    </StyledDiv>
+  );
 }
 
-export default Board
+export default Board;
