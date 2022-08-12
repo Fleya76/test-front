@@ -1,22 +1,23 @@
-import React from 'react';
-import './Board.css';
+import React from 'react'
+import './Board.css'
 
 function Card({ id, picture, title, price, duration }: any) {
   return (
     <div className="card" data-testid={`itinerary-card-${id}`}>
       <div className="header">
-        <div className="cover" style={{ backgroundImage: `url(${picture})` }}></div>
+        <div
+          className="cover"
+          style={{ backgroundImage: `url(${picture})` }}
+        ></div>
       </div>
       <div className="body">
         <p className="title">{title}</p>
         <div className="detail">
-          <span className="duration">
-            {"Environ " + duration + " jours"}
-          </span>
+          <span className="duration">{'Environ ' + duration + ' jours'}</span>
           <span className="price">
-            {"à partir de "}
+            {'à partir de '}
             <span className="priceValue">{price}</span>
-            {" €"}
+            {' €'}
           </span>
         </div>
       </div>
@@ -27,9 +28,7 @@ function Card({ id, picture, title, price, duration }: any) {
 function Board() {
   return (
     <div className="Board">
-      <header className="header">
-        Evaneos
-      </header>
+      <header className="header">Evaneos</header>
       <div className="itinerary-container">
         <Card
           id={1479}
@@ -47,7 +46,7 @@ function Board() {
         />
       </div>
     </div>
-  );
+  )
 }
 
-export default Board;
+export default Board
