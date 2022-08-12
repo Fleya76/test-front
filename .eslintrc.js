@@ -20,7 +20,6 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
-    'comma-dangle': [2, 'always-multiline'],
     'no-use-before-define': 'off',
     'react/jsx-filename-extension': [
       2,

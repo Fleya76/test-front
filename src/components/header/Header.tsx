@@ -7,6 +7,7 @@ const StyledHeader = styled.header`
   font-weight: 700;
   line-height: 2.4rem;
   margin-bottom: 2%;
+  min-width: 200px;
   width: 100%;
   @media (min-width: ${(props) =>
       props.theme.device.mobile.min}) and (max-width: ${(props) =>
@@ -19,7 +20,7 @@ const StyledHeader = styled.header`
     padding: 3%;
   }
   @media (min-width: ${(props) => props.theme.device.desktop.min}) {
-    padding: 2%;
+    padding: 1%;
   }
 `;
 
