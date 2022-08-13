@@ -5,7 +5,7 @@ interface TravelRequest {
 }
 
 // A mock function to mimic making an async request for data
-export function fetchTrips(): TravelRequest | any {
+export function fetchTrips(filter: string): TravelRequest | any {
   return new Promise((resolve) =>
     setTimeout(
       () =>
@@ -109,7 +109,7 @@ export function fetchTrips(): TravelRequest | any {
               duration: 15,
               highlight: false,
             },
-          ],
+          ].filter((element) => (filter ? element.tag === filter : element)),
         }),
       100
     )

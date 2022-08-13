@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { Header } from '../../components/header';
@@ -12,10 +12,11 @@ const StyledDiv = styled.div`
 `;
 
 function Board() {
+  const [filter, setFilter] = useState('');
   return (
     <StyledDiv>
-      <Header>Evanoes</Header>
-      <Gallery />
+      <Header setFilter={setFilter}>Evanoes</Header>
+      <Gallery filter={filter} />
     </StyledDiv>
   );
 }

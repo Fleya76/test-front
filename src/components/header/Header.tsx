@@ -6,16 +6,16 @@ interface StyledHeaderType {
 }
 
 const StyledHeader = styled.header<StyledHeaderType>`
+  display: flex;
   ${(props) =>
     props.withBackground && `background-color: ${props.theme.colors.veraneos};`}
-  font-size: 2.4rem;
-  font-weight: 700;
-  line-height: 2.4rem;
+  justify-content: space-between;
   margin-bottom: 2%;
   min-width: 200px;
   width: 100%;
   @media (max-width: ${(props) => props.theme.device.mobile.max}) {
     padding: 5%;
+    flex-direction: column;
   }
   @media (min-width: ${(props) =>
       props.theme.device.tablet.min}) and (max-width: ${(props) =>
@@ -27,14 +27,34 @@ const StyledHeader = styled.header<StyledHeaderType>`
   }
 `;
 
+const StyledTitle = styled.span`
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+  width: 30%;
+`;
+
 interface HeaderType {
   children: string;
+  setFilter?: any;
   withBackground?: boolean;
 }
 
-const Header = ({ children, withBackground = true }: HeaderType) => {
+const Header = ({ children, setFilter, withBackground = true }: HeaderType) => {
   return (
-    <StyledHeader withBackground={withBackground}>{children}</StyledHeader>
+    <StyledHeader withBackground={withBackground}>
+      <StyledTitle>{children}</StyledTitle>
+      {setFilter && (
+        <span>
+          <label>Filtre par tag </label>
+          <select onChange={(event: any) => setFilter(event.target.value)}>
+            <option value="">Aucun tag</option>
+            <option value="combined">Multi-destination</option>
+            <option value="group">Voyage en groupe</option>
+          </select>
+        </span>
+      )}
+    </StyledHeader>
   );
 };
 

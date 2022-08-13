@@ -21,7 +21,11 @@ const StyledContainer = styled.div`
   }
 `;
 
-const Gallery = () => {
+interface GalleryType {
+  filter: string;
+}
+
+const Gallery = ({ filter }: GalleryType) => {
   const highLightedCards = useAppSelector(selectTripsByHighLight);
   const unHighLightedCards = useAppSelector(selectTripsByUnHighLight);
   const status = useAppSelector(selectStatus);
@@ -29,8 +33,8 @@ const Gallery = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(getTripsAsync());
-  }, []);
+    dispatch(getTripsAsync(filter));
+  }, [filter]);
 
   return (
     <StyledContainer>

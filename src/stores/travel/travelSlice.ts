@@ -20,10 +20,13 @@ const initialState: TravelState = {
   status: 'idle',
 };
 
-export const getTripsAsync = createAsyncThunk('travel/fetchTrips', async () => {
-  const response = await fetchTrips();
-  return response.data;
-});
+export const getTripsAsync = createAsyncThunk(
+  'travel/fetchTrips',
+  async (filter: string) => {
+    const response = await fetchTrips(filter);
+    return response.data;
+  }
+);
 
 export const travelSlice = createSlice({
   name: 'travel',
