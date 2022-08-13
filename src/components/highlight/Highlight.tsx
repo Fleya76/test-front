@@ -12,7 +12,7 @@ const StyledContainer = styled.div`
   gap: 16px;
   justify-content: center;
   margin-bottom: ${(props) => props.theme.margin.third};
-  min-width: 200px;
+  min-width: 285px;
   padding-left: ${(props) => props.theme.margin.secondary};
   padding-right: ${(props) => props.theme.margin.secondary};
   padding-bottom: ${(props) => props.theme.margin.third};

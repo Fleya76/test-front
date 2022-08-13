@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import truncateString from '../../helpers/truncateString';
 import { TravelObject } from '../../constants/types';
+import { Tag } from '../tag';
 
 interface StyledCardType {
   isHightlighted: boolean;
@@ -14,11 +15,13 @@ const StyledCard = styled.div<StyledCardType>`
   width: ${(props) =>
     props.isHightlighted ? `calc(40% - 8px)` : `calc(33% - 8px)`};
 `;
+
 const StyledHeader = styled.div`
   position: relative;
   width: 100%;
   padding-bottom: 62.5%;
 `;
+
 const StyledCover = styled.div`
   position: absolute;
   top: 0;
@@ -29,6 +32,7 @@ const StyledCover = styled.div`
   background-repeat: no-repeat;
   background-position: center center;
 `;
+
 const StyledTitle = styled.p`
   color: ${(props) => props.theme.colors.ink};
   font-size: 1.8rem;
@@ -78,6 +82,7 @@ const Card = ({
   return (
     <StyledCard isHightlighted={highlight} data-testid={`itinerary-card-${id}`}>
       <StyledHeader>
+        {tag && <Tag name={tag} />}
         <StyledCover
           style={{ backgroundImage: `url(${picture})` }}
         ></StyledCover>
