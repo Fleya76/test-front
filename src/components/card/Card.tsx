@@ -9,6 +9,7 @@ interface StyledCardType {
 }
 
 const StyledCard = styled.div<StyledCardType>`
+  box-shadow: 2px 2px 2px ${(props) => props.theme.colors?.['paper-darker']};
   border: 1px solid ${(props) => props.theme.colors?.['paper-darker']};
   min-width: 285px;
   position: relative;

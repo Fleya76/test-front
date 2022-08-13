@@ -1,15 +1,16 @@
 import { TravelObject } from '../../constants/types';
 
-interface TravelRequest {
+export interface TravelRequest {
   data: TravelObject[];
 }
 
 // A mock function to mimic making an async request for data
-export function fetchTrips(filter: string): TravelRequest | any {
+export function fetchTrips(filter: string): Promise<TravelRequest> {
   return new Promise((resolve) =>
     setTimeout(
       () =>
         resolve({
+          // @ts-ignore
           data: [
             {
               id: 1479,

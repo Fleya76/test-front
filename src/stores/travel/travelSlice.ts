@@ -36,7 +36,6 @@ export const travelSlice = createSlice({
       state: TravelState,
       action: PayloadAction<PayloadObject>
     ): TravelState | void => {
-      console.log('manageProperty');
       const { id, key, value } = action.payload;
       if (!id || !key || !value) {
         return state;
@@ -67,14 +66,7 @@ export const travelSlice = createSlice({
 });
 
 export const { manageProperty } = travelSlice.actions;
-
-export const selectTrips = (state: RootState): TravelObject[] =>
-  state.travel.value;
 export const selectStatus = (state: RootState): string => state.travel.status;
-export const selectTripsByGroup = (
-  state: RootState,
-  tag: string
-): TravelObject[] => state.travel.value.filter((travel) => travel.tag === tag);
 export const selectTripsByHighLight = (state: RootState): TravelObject[] =>
   state.travel.value.filter((travel) => travel.highlight === true);
 export const selectTripsByUnHighLight = (state: RootState): TravelObject[] =>
