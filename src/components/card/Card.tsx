@@ -1,11 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
+import truncateString from '../../helpers/truncateString';
+import { TravelObject } from '../../constants/types';
 
-const StyledCard = styled.div`
+interface StyledCardType {
+  isHightlighted: boolean;
+}
+
+const StyledCard = styled.div<StyledCardType>`
   border: 1px solid ${(props) => props.theme.colors?.['paper-darker']};
-  min-width: 250px;
+  min-width: 285px;
   position: relative;
-  width: calc(33% - 8px);
+  width: ${(props) =>
+    props.isHightlighted ? `calc(40% - 8px)` : `calc(33% - 8px)`};
 `;
 const StyledHeader = styled.div`
   position: relative;
@@ -59,16 +66,24 @@ const StyledPriceValue = styled.span`
   font-weight: bold;
 `;
 
-const Card = ({ id, picture, title, price, duration }: any) => {
+const Card = ({
+  id,
+  picture,
+  title,
+  price,
+  duration,
+  highlight,
+  tag,
+}: TravelObject) => {
   return (
-    <StyledCard data-testid={`itinerary-card-${id}`}>
+    <StyledCard isHightlighted={highlight} data-testid={`itinerary-card-${id}`}>
       <StyledHeader>
         <StyledCover
           style={{ backgroundImage: `url(${picture})` }}
         ></StyledCover>
       </StyledHeader>
       <StyledBody>
-        <StyledTitle>{title}</StyledTitle>
+        <StyledTitle>{truncateString(title, 65)}</StyledTitle>
         <StyledDetail>
           <StyledDuration>{'Environ ' + duration + ' jours'}</StyledDuration>
           <StyledPrice>

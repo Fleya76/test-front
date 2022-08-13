@@ -43,7 +43,9 @@ const theme: DefaultTheme = {
     pink: '#faab95',
   },
   margin: {
-    main: '1%',
+    main: '10%',
+    secondary: '5%',
+    third: '3%',
   },
 };
 

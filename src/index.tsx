@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { store } from './stores';
+import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 
 import { Board } from './pages/board';
@@ -10,9 +12,11 @@ import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <Board />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <Board />
+      </ThemeProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
